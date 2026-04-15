@@ -1,7 +1,7 @@
 # iGaming-Power-BI-Analytics
 End-to-end Power BI solution with data cleaning, star schema modelling, and DAX analysis of multi-source affiliate marketing data.
 
-# PeakMedia iGaming Marketing Analytics
+## PeakMedia iGaming Marketing Analytics
 
 ## Business Objectives
 
