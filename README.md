@@ -12,3 +12,5 @@ The objective of this analysis is to evaluate the effectiveness of campaigns in 
 The data provided for this project requires cleaning, transformation, and modelling before insights can be generated in Power BI.
 
 ---
+
+### Data Tables
