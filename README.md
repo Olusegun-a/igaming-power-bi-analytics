@@ -3,7 +3,7 @@ End-to-end Power BI solution with data cleaning, star schema modelling, and DAX 
 
 ## PeakMedia iGaming Marketing Analytics
 
-## Business Objectives
+### Business Objectives
 
 This project focuses on analysing marketing performance for PeakMedia, an iGaming affiliate marketing company. The company drives traffic to online casino and sportsbook operators through performance marketing campaigns.
 
