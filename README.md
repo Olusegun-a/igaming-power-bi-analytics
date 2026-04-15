@@ -10,3 +10,5 @@ This project focuses on analysing marketing performance for PeakMedia, an iGamin
 The objective of this analysis is to evaluate the effectiveness of campaigns in converting traffic into registrations, first-time deposits (FTDs), and commission revenue.
 
 The data provided for this project requires cleaning, transformation, and modelling before insights can be generated in Power BI.
+
+---
