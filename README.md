@@ -1,4 +1,6 @@
-<img width="106" height="25" alt="image" src="https://github.com/user-attachments/assets/d12fb16f-f6ed-461f-aa8c-16eeed924873" />#iGaming-Power-BI-Analytics
+<img width="106" height="25" alt="image" src="https://github.com/user-attachments/assets/d12fb16f-f6ed-461f-aa8c-16eeed924873" />
+
+# iGaming-Power-BI-Analytics
 End-to-end Power BI solution with data cleaning, star schema modelling, and DAX analysis of multi-source affiliate marketing data.
 
 ## PeakMedia iGaming Marketing Analytics
