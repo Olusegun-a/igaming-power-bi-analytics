@@ -15,7 +15,7 @@ The data provided for this project requires cleaning, transformation, and modell
 
 ---
 
-### Data Tables
+### Original Data Tables
 
 #### Campaign Data
 
@@ -33,3 +33,35 @@ The data provided for this project requires cleaning, transformation, and modell
 ---
 
 
+## trackAff Feed
+
+| Column Name | Dtype | Data Issue | Purpose | Links To | Mitigation |
+|------------|------|-----------|---------|----------|------------|
+| date | DATE | mixed formats | Daily activity date | `Dim_Date[Date]` | standardised format to dd-mm-yyyy |
+| operator_name | TEXT | NA | Operator receiving traffic | `Dim_Operator[operator_name]` | NA |
+| tracking_id | INT | NA | ID linking campaign/card/date | Used to derive campaign/card/date | NA |
+| card_id | INT | NA | card identifier | `Dim_Card[card_id]` | Validate with tracking_id |
+| registrations | INT | NA | Number of player registrations | Funnel metrics | NA |
+| ftds | INT | NA | First-time deposits | Funnel metrics | NA |
+| commission_per_ftd | INT | Currency-dependent | Revenue earned per FTD | Used in commission calculation | Convert to GBP equivalent |
+| total_commission | INT | Mixed currencies | Total commission earned | ROI Metric | Create `total_commission_gbp` column |
+| currency | TEXT | NA | currency code, use to standardize commission output |  | NA |
+
+---
+
+## affMatrix Feed
+
+| Column Name | Dtype | Data Issue | Purpose | Links To | Mitigation |
+|------------|------|-----------|---------|----------|------------|
+| player_id | TEXT | NA | Unique player record | Fact only | NA |
+| operator_name | TEXT | NA | Operator associated to player | `Dim_Operator[operator_name]` | NA |
+| product | TEXT | Missing values | Casino / Sportsbook product type |  |  |
+| tracking_id | INT |  | ID linking campaign/card/date | Used to derive campaign/card/date |  |
+| card_id | INT | NA | card identifier | `Dim_Card[card_id]` | Validate with tracking_id |
+| registration_date | DATE | NA | Date player registered | `Dim_Date[Date]` |  |
+| ftd_date | DATE | Blank if no deposit | Date of first deposit | `Dim_Date[Date]` |  |
+| commission_per_ftd | DECIMAL | Mixed currencies | Commission rate per FTD | Revenue / roi | Convert to GBP |
+| commission_earned | DECIMAL |   | Actual commission earned | Revenue / roi | Create GBP equivalent |
+| currency | TEXT | Multiple currencies | Original currency code |   |   |
+
+---
