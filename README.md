@@ -38,7 +38,7 @@ The data provided for this project requires cleaning, transformation, and modell
 |------------|------|-----------|---------|----------|------------|
 | date | DATE | mixed formats | Daily activity date | `Dim_Date[Date]` | standardised format to dd-mm-yyyy |
 | operator_name | TEXT | NA | Operator receiving traffic | `Dim_Operator[operator_name]` | NA |
-| tracking_id | INT | NA | ID linking campaign/card/date | Used to derive campaign/card/date | NA |
+| tracking_id | INT | some rows missing tracking_ids | ID linking campaign/card/date | Used to derive campaign/card/date | use campaign/card/date where tracking_id is missing|
 | card_id | INT | NA | card identifier | `Dim_Card[card_id]` | Validate with tracking_id |
 | registrations | INT | NA | Number of player registrations | Funnel metrics | NA |
 | ftds | INT | NA | First-time deposits | Funnel metrics | NA |
