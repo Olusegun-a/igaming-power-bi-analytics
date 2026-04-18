@@ -15,13 +15,19 @@ The data provided for this project requires cleaning, transformation, and modell
 
 ### Data Tables
 
-| Column Name | Column 2 | Column 3 |
-|----------|----------|----------|
-| date    | Data 2   | Data 3   |
-| campaign_id   | Data 5   | Data 6   |
-| campaign_name    | Data 5   | Data 6   |
-| impressions   | Data 5   | Data 6   |
-| clicks   | Data 5   | Data 6   |
-| inbounds  | Data 5   | Data 6   |
-| outbounds  | Data 5   | Data 6   |
-| spend_gbp  | Data 5   | Data 6   |
+#### Campaign Data
+
+| Column Name | Dtype | Data Issue | Purpose | Links To | Mitigation |
+|------------|------|-----------|---------|----------|------------|
+| date | DATE | None identified | Date of campaign activity | `Dim_Date[Date]` | Standardised to date format in Power Query / Python |
+| campaign_id | INT | None identified | Unique identifier for each campaign | `Dim_Campaign[campaign_id]`, parsed campaign_id in affiliate tables | Use as primary campaign key |
+| campaign_name | TEXT | Potential naming inconsistencies over time | Human-readable campaign name for reporting | `Dim_Campaign[campaign_name]` | Store in dimension table as master label |
+| impressions | INT | Possible nulls / zero values | Number of ad views | Fact only | Replace nulls with 0 if valid |
+| clicks | INT | Could exceed outbounds logic checks needed | Number of ad clicks | Used in funnel analysis | Validate clicks ≤ impressions |
+| inbounds | INT | Definition may vary | Users landing on owned site/page | Fact only | Confirm business definition in README |
+| outbounds | INT | May exceed clicks if tracking issue exists | Users sent to operator sites | Used with affiliate conversions | Flag if outbounds > clicks |
+| spend_gbp | DECIMAL | Negative / null values possible | Campaign marketing cost in GBP | ROI measures with commission facts | Replace nulls, flag negatives |
+
+---
+
+
