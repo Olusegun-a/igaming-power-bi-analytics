@@ -159,12 +159,12 @@ A star schema was used by separating split descriptive fields into dimension tab
 
 The dimension tables were used in Model View to create one-to-many relationships into the fact tables:
 
-```text
 Dim_Date      → all fact tables
 Dim_Campaign  → all fact tables
 Dim_Operator  → affiliate fact tables
 
-## 3. Analysis — DAX Measures
+
+### 3. Analysis — DAX Measures
 
 DAX measures were created to answer the business questions.
 
@@ -174,27 +174,23 @@ DAX measures were created to answer the business questions.
 
 **Answer:** `LuckyEdge`
 
-```DAX
 Total Earn Commission GBP =
 SUM(trackAff_feed_clean[total_commission_gbp]) +
 SUM(affMatrix_feed_clean[commission_earned_gbp])
 
 ### Which campaign delivered the best return on spend (commission earned vs spend)?
 
-```DAX
 Return on Ad Spend (ROAS) =
 DIVIDE([Total Commission Revenue (£)], [Marketing Spend (£)])
 
 ### What is the click-to-registration ratio and the registration-to-FTD ratio, by operator and by campaign?
 
-```DAX
 Total Registrations =
 SUM(trackAff_feed_clean[registrations]) +
 COUNTROWS(affMatrix_feed_clean)
 
 ### Which card performed best within each campaign?
 
-```DAX
 Which card performed best within each campaign?
 
 ### Week-on-week and month-on-month commission change — for the business as a whole and by operator
@@ -274,4 +270,3 @@ The final dashboard enables stakeholders to:
 - Compare campaign ROI
 - Review operator funnel efficiency
 - Make quicker commercial decisions using trusted data
-
